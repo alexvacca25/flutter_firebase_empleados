@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1095817888283",
+    "firebase_url": "https://mensajeros-dfa22-default-rtdb.firebaseio.com",
+    "project_id": "mensajeros-dfa22",
+    "storage_bucket": "mensajeros-dfa22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095817888283:android:01718002b8dae762c92ebe",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase_empleados"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095817888283-1m574a74c31aajeemao4g9hgbq3fpkm9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEhSuYsdDXmycrv1tJ6lyqWoW7ON_AeNQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095817888283-1m574a74c31aajeemao4g9hgbq3fpkm9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
