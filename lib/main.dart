@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_empleados/domain/controller/controlperfil.dart';
 import 'package:flutter_firebase_empleados/domain/controller/controluser.dart';
 import 'package:flutter_firebase_empleados/ui/app.dart';
 import 'package:get/get.dart';
@@ -19,6 +20,7 @@ void main() async {
               appId: "1:1095817888283:web:59501d01ab8bfa71c92ebe"))
       : await Firebase.initializeApp();
 
+  Get.put(ControlUserPerfil());
   Get.put(ControlUserAuth());
   runApp(const MyApp());
 }

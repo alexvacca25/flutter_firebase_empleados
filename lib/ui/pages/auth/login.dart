@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_empleados/domain/controller/controluser.dart';
 import 'package:flutter_firebase_empleados/ui/pages/widget/input.dart';
 import 'package:get/get.dart';
 
@@ -10,6 +11,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ControlUserAuth cua = Get.find();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -31,9 +33,34 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Aquí puedes añadir la lógica para validar el inicio de sesión
-                // y manejar la información ingresada por el usuario.
-                print('Iniciando sesión...');
+                cua
+                    .ingresarUser(emailControl.text, passwControl.text)
+                    .then((value) {
+                  if (cua.userValido == null) {
+                    Get.snackbar(
+                      'Título del Snackbar',
+                      'Contenido del Snackbar',
+                      snackPosition: SnackPosition.TOP, // Posición del Snackbar
+                      backgroundColor:
+                          Colors.amber, // Color de fondo del Snackbar
+                      colorText: Colors.white, // Color del texto del Snackbar
+                      borderRadius: 10, // Radio de borde del Snackbar
+                      margin: const EdgeInsets.all(10), // Márgenes del Snackbar
+                      duration:
+                          const Duration(seconds: 3), // Duración del Snackbar
+                      isDismissible:
+                          true, // Hacer dismiss (desaparecer) al tocar fuera del Snackbar
+                      dismissDirection:
+                          DismissDirection.vertical, // Dirección para dismiss
+                      forwardAnimationCurve:
+                          Curves.easeOutBack, // Animación al aparecer
+                      reverseAnimationCurve:
+                          Curves.easeInBack, // Animación al desaparecer
+                    );
+                  } else {
+                    Get.offAllNamed('/home');
+                  }
+                });
               },
               child: const Text('Iniciar sesión'),
             ),

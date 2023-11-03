@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_empleados/ui/pages/auth/login.dart';
 import 'package:flutter_firebase_empleados/ui/pages/auth/register.dart';
+import 'package:flutter_firebase_empleados/ui/pages/home/home.dart';
+import 'package:flutter_firebase_empleados/ui/pages/home/perfil.dart';
 import 'package:get/get.dart';
 
 class MyApp extends StatelessWidget {
@@ -18,7 +20,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/login',
       routes: {
         '/login': (context) => LoginPage(),
-        '/registro': (context) => RegisterPage()
+        '/registro': (context) => RegisterPage(),
+        '/home': (context) => MyHomePage(),
+        '/perfil': (context) => const Perfil()
       },
     );
   }
